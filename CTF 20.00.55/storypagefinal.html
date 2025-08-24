@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story</title>
+    <style>
+        /* Set the video to cover the entire viewport */
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            /* Place the video behind other content */
+        }
+
+        /* Style the content on top of the video */
+        .content {
+            position: relative;
+            z-index: 1;
+            /* Ensure content appears above video */
+            padding: 20px;
+            color: white;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 50;
+            right: 0;
+            z-index: 1000;
+            /* Ensure header is above other content */
+            width: 100%;
+            height: 60px;
+            /* Adjust height as needed */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        header:hover {
+            opacity: 0.5;
+            /* Set opacity to 0.7 on hover */
+        }
+
+        .logo {
+            margin-left: 10px;
+            max-width: 100px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+
+        }
+
+        nav {
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            opacity: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        footer:hover {
+            opacity: 0.5;
+            /* Set opacity to 0.7 on hover */
+        }
+
+        .container22 {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            padding: 40px;
+            margin-top: -52%;
+            margin-bottom: -30%;
+            background-color: #000;
+            color: #fff;
+            border-radius: 20px;
+            font-size: large;
+            background: rgba(203, 164, 164, 0.34);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(3.4px);
+            -webkit-backdrop-filter: blur(3.4px);
+            border: 1px solid rgba(255, 255, 255, 0.31);
+        }
+
+
+        body {
+
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 140px;
+            margin-top: 37%;
+            border: 1px solid #ddd;
+            padding: 30px;
+            margin-bottom: 10%;
+            margin-left: 15%;
+            background-color: #000;
+            color: #fff;
+            border-radius: 20px;
+            opacity: .6;
+        }
+
+        button {
+            background-color: #1ba520;
+            color: white;
+            padding: 10px 20px;
+
+            border-radius: 10px;
+            cursor: pointer;
+
+        }
+
+        button:hover {
+            background-color: #013404;
+        }
+
+        .container2 {
+            max-width: 140px;
+            margin-top: -17%;
+            border: 1px solid #ddd;
+            padding: 30px;
+            margin-bottom:-10%;
+            margin-left: 45%;
+            background-color: #000;
+            color: #fff;
+            border-radius: 20px;
+            opacity: .6;
+        }
+
+        .button2 {
+            background-color: #1ba520;
+            color: white;
+            padding: 10px 20px;
+
+            border-radius: 10px;
+            cursor: pointer;
+
+        }
+
+        button:hover {
+            background-color: #013404;
+        }
+
+        .container3 {
+            max-width: 140px;
+            margin-top: 40px;
+            border: 1px solid #ddd;
+            padding: 30px;
+            margin-bottom: 15%;
+            margin-left: 74%;
+            background-color: #000;
+            color: #fff;
+            border-radius: 20px;
+            opacity: .6;
+        }
+
+        .button3 {
+            background-color: #1ba520;
+            color: white;
+            padding: 10px 20px;
+
+            border-radius: 10px;
+            cursor: pointer;
+
+        }
+
+        button:hover {
+            background-color: #013404;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Video element with source -->
+    <video autoplay muted loop>
+        <source src="WhatsApp Video 2024-03-18 at 10.41.45 AM.mp4" type="video/mp4">
+        <!-- Add additional source elements for different video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCp2XGVBs6ZR-g2jHYYPzBJuMvurX1S-BHMQ&usqp=CAU"
+                class="logo" alt="Logo" height="50">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/homepage.html">Home</a></li>
+                <li><a href="/RulepageFinall.html">Rules</a></li>
+                <li><a href="/storypagefinal.html">Story</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <section class="container">
+        <a href="/story/story 1/1 description.html"><button class="button2">MYSTIC STORY 1</button></a>
+    </section>
+
+    <section class="container2">
+        <a href="/story/story 2/1 description.html"><button class="button2">MYSTIC STORY 2</button></a>
+    </section>
+
+    <section class="container3">
+        <a href="/story/story 3/1 description.html"><button class="button2">MYSTIC STORY 3</button></a>
+    </section>
+
+    <section>
+        <div class="container22">
+            Rachel a teenage freelance hacker, works for companies to do thier shady, not so ethical, work for them in
+            exchange of whooping amount of money transfered into her account. She's an adrenaline junkie, getting high
+            off doing not so ethical things without getting caught by the "ethical hackers" of the government. She
+            recently was landed with an offer of a lifetime, with the money being offered to her would be enough for her
+            to live her rest of the life batheing in luxury, without needing to work for even a day later. While waiting
+            for the company, Larsen security, to send her the information required for her to sign the contract for the
+            offer she stumbles upon a game on the internet, darkweb. There is a game uploaded on the darkweb by the
+            ruling family of the web, The Volkovs, along with rumours saying whoever can solve this game can secure a
+            permanent seat in the core team working for the family. It is basically the only dream she's dreamt of ever
+            since she got to learn about the family, to come in the eyes of the family. Although there is no particular
+            official annoucement from the Volkovs on the site, but they are known for their notorious tectics to hire
+            people.
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; MYSTIC 6174 - TechXtreme'24 </p>
+    </footer>
+</body>
+
+</html>

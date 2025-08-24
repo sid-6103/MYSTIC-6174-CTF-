@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Challenges</title>
+    <link rel="stylesheet" href="story 2 css/story-level-description.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCp2XGVBs6ZR-g2jHYYPzBJuMvurX1S-BHMQ&usqp=CAU" class="logo" alt="Logo" height="50">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Levels</a></li>
+            </ul>
+        </nav>
+        <div class="timer-container">
+            <div class="timer" id="timer-header"></div>
+        </div>
+    </header>
+
+    <section class="container">
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <!-- Level 1 -->
+        <button id="level1Button" class="accordion" onclick="showSublevels('Level 4', 5)">Access Level 4</button>
+        <div id="level1Challenges" class="ctf-challenges panel">
+            <!-- Sublevels hidden initially -->
+        </div>
+    </section>
+
+    <section class="nextbuttoncontainer">
+        <a href="/story/story 2/5 description.html"><button class="nextbutton">MOVE TO NEXT STORY</button></a>
+</section>
+
+    <footer>
+        <p>&copy; MYSTIC 6174 - TechXtreme'24</p>
+    </footer>
+
+    <script>
+        // Initially disable the next button
+        document.querySelector('.nextbutton').disabled = true;
+    
+        // Sublevel information for Level 1
+        const sublevelInfo = {
+            "4.2": {
+                description: " Rachel has reached a site of the company which she knows is supposed to crack in order to get to the server of the storage files of the main building.Help her get the clue using the file provided.",
+                link: "/story/story 2/story2 ans/level 4ans.html",
+                flag: "TX24_CTF{Hmm_not_so_bad_afterall}"
+            }
+            // Add other sublevels here if needed
+        };
+    
+        let interval; // Variable to store the interval
+        let startTime; // Variable to store start time
+    
+        // Timer for all sublevels
+        function showSublevels(level, timeLimit) {
+            startTimer(timeLimit);
+    
+            const levelButton = document.getElementById(`level1Button`);
+            const levelChallenges = document.getElementById(`level1Challenges`);
+    
+            levelButton.classList.toggle("active");
+            levelChallenges.innerHTML = '';
+    
+            const selectedSublevel = `4.2`; // Directly set the selected sublevel
+            levelChallenges.innerHTML += `
+                <h3>Sublevel ${selectedSublevel}</h3>
+                <p>${sublevelInfo[selectedSublevel].description} - <span class="sublevel-description" onclick="openLink('${sublevelInfo[selectedSublevel].link}')">Link</span></p>
+                <input type="text" id="flagInput${selectedSublevel}" placeholder="Enter CTF Flag">
+                <button onclick="checkCTFFlag('${selectedSublevel}', '${sublevelInfo[selectedSublevel].flag}')">Submit Flag</button>
+                <p id="flagMessage${selectedSublevel}"></p>
+            `;
+    
+            if (levelButton.classList.contains("active")) {
+                levelChallenges.style.maxHeight = levelChallenges.scrollHeight + "px";
+            } else {
+                levelChallenges.style.maxHeight = null;
+            }
+        }
+    
+        function openLink(link) {
+            window.open(link, '_blank');
+        }
+    
+        function startTimer(timeLimit) {
+            let timer = timeLimit * 60;
+            clearInterval(interval); // Clear any existing interval
+            interval = setInterval(function () {
+                let minutes = Math.floor(timer / 60);
+                let seconds = timer % 60;
+    
+                if (timer > 0) {
+                    document.getElementById("timer-header").innerText = "Time Remaining: " + minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
+                    timer--;
+                } else {
+                    clearInterval(interval);
+                    document.getElementById("timer-header").innerText = "Time Completed!";
+                }
+            }, 1000);
+            // Record the start time when the timer starts
+            startTime = new Date();
+        }
+    
+        function checkCTFFlag(selectedSublevel, correctFlag) {
+            const flagInput = document.getElementById(`flagInput${selectedSublevel}`).value.trim();
+            const flagMessage = document.getElementById(`flagMessage${selectedSublevel}`);
+    
+            if (flagInput !== "") {
+                const currentTime = document.getElementById("timer-header").innerText;
+                if (currentTime !== "Time Completed!") {
+                    if (flagInput === correctFlag) {
+                        clearInterval(interval); // Stop the timer
+                        let endTime = new Date(); // Store the end time
+                        let timeTakenInSeconds = (endTime - startTime) / 1000; // Calculate time taken in seconds
+                        let minutes = Math.floor(timeTakenInSeconds / 60);
+                        let seconds = Math.floor(timeTakenInSeconds % 60);
+                        let timeTaken = `${minutes} minutes ${seconds} seconds`;
+                        alert(`Congratulations! Flag for Sublevel ${selectedSublevel} is correct. You completed it in ${timeTaken}.`);
+                        enableNextLevel(selectedSublevel);
+                    } else {
+                        alert(flagMessage.innerText = `Incorrect flag for Sublevel ${selectedSublevel}. Please try again.`);
+                    }
+                } else {
+                    alert(flagMessage.innerText = "You cannot enter the flag at this time.");
+                }
+            } else {
+                alert(flagMessage.innerText = "Please enter a flag.");
+            }
+        }
+    
+        function enableNextLevel(selectedSublevel) {
+            // Enable the next button
+            document.querySelector('.nextbutton').disabled = false;
+            // Code to enable next level goes here if needed
+        }
+    </script>
+</body>
+
+</html>

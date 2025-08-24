@@ -1,0 +1,199 @@
+ body {
+            background-image: url(https://www.thefinalhop.com/content/images/2023/12/thefinalhop_The_Evolution_of_Cybersecurity_Are_We_Really_Levera_16b08fe7-be17-4f0b-8e75-59b75319a993.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+            scrollbar-width: none;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+            height: 60px;
+            opacity: .6;
+        }
+
+        .logo-container {
+            margin-left: 10px;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .logo {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .timer-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .timer {
+            margin-right: 30px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        nav {
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        
+
+        section {
+            padding: 20px;
+            margin-top: 60px;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            opacity: .6;
+            border-radius: 20px;
+        }
+
+        .accordion {
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #ddd;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .ctf-challenge {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        button {
+            background-color: #1ba520;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #013404;
+        }
+
+        .sublevel-description {
+            color: #1ba520;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Hide the scrollbar */
+        body::-webkit-scrollbar {
+            width: 0;
+        }
+
+        body {
+            -ms-overflow-style: none;
+        }
+
+        
+          .nextbutton {
+                max-width: 200px;
+                margin-top: -20%;
+                margin-bottom: 10px;
+                margin-left: 630px;
+              background-color: #1ba520;
+              color: white;
+              padding: 10px 20px;
+             
+              border-radius: 10px;
+              cursor: pointer;
+              
+          }
+  
+          .nextbutton:hover {
+              background-color: #013404;
+          } 
+
+          .hint-button {
+            position: absolute;
+            left: 1170px;
+            
+            top: 38%;
+            transform: translateY(-50%);
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .hint-button:hover {
+            background-color: #45a049;
+        }
